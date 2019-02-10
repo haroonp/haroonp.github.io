@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+.styled-checkbox { // take it out of document flow
+  opacity: 0;
+  position: relative;
+  z-index: 1;
+  width: 21px;
+  height: 20px;
+  left: 10px;
+  top: 5px;
+  cursor:pointer;
+
+  & + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  // Box.
+  & + label:before {
+    content: "";
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 100%;
+    left: -13px;
+    position: absolute;
+    top: -10px;
+  }
+
+  // Box checked
+  &:checked + label:before {
+    background: #62c37b;
+    border: 1px solid #62c37b;
+
+  }
+
+  // Checkmark. Could be replaced with an image
+  &:checked + label:after {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 1px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
+      4px -6px 0 white, 4px -8px 0 white;
+    transform: rotate(45deg);
+  }
+}
+.table th, .table td {
+    vertical-align: middle !important;
+}
+*:focus {
+    outline: none;
+}
+.btn-primary:focus, .btn-primary.focus {
+    box-shadow: none !important
+}
+.btn-primary:hover {
+    background-color: #0069d9;
+}
+.bg-chart {
+    top: -5px;
+    overflow: hidden;
+    background: #f9f9f9;
+}
+.bg-chart > div:last-child{
+  left: -20px;
+  top: -5px;
+}
+body{
+  background-color: #f8f9fa !important
+}
